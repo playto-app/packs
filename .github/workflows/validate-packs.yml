@@ -4,13 +4,17 @@ on:
   pull_request:
     paths:
       - 'packs/**'
-      - 'scripts/validate-packs.py'
+      - 'scripts/**'
       - '.github/workflows/validate-packs.yml'
   push:
     branches: [main]
     paths:
       - 'packs/**'
-      - 'scripts/validate-packs.py'
+      - 'scripts/**'
+      - '.github/workflows/validate-packs.yml'
+
+permissions:
+  contents: write
 
 jobs:
   validate:
@@ -27,3 +31,34 @@ jobs:
 
       - name: Run pack validator
         run: python scripts/validate-packs.py
+
+  regenerate-readmes:
+    name: Regenerate READMEs (main only)
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate READMEs from pack metadata
+        run: python scripts/generate-readmes.py
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name  "playto-app-bot"
+            git config user.email "playto-app-bot@users.noreply.github.com"
+            git add packs/**/README.md
+            git commit -m "chore(readmes): regenerate from pack metadata [skip ci]"
+            git push
+          else
+            echo "No README changes."
+          fi

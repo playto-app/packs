@@ -13,31 +13,23 @@ Packs are organized by **game, then by source-target language pair**. A pack is 
 
 ```
 packs/
-└── slay-the-spire-2/
-    ├── README.md              # game overview shared across all language pairs
-    ├── preview.png            # optional, game-level screenshot
-    ├── ja-en/                 # JP game build → English translations
-    │   ├── README.md              # pair-specific notes, contributor, screenshot
-    │   └── game-pack.playto-pack
-    └── en-ja/                 # EN game build → Japanese translations
+└── slay-the-spire/
+    ├── README.md              # auto-generated game-level overview
+    ├── en-ja/                 # EN game build → Japanese translations
+    │   ├── README.md          # auto-generated pair summary
+    │   └── slay-the-spire.playto-pack
+    └── ja-en/                 # JP game build → English translations
         ├── README.md
-        └── game-pack.playto-pack
+        └── slay-the-spire.playto-pack
 ```
+
+**READMEs are auto-generated.** You don't write or edit them. CI regenerates both the game-level and pair-level READMEs from the pack's metadata on every push to main. If you want to add subjective notes (known gaps, special capture tips), put them in the pack's `profile.context.prompt_hint` field before exporting — they'll be rendered into the README.
 
 ### Folder / slug rules
 
 - **Game slug** — lowercase, hyphens for spaces, no special characters. Match the game's widely-known title (avoid internal code names).
 - **Pair folder** — `<source>-<target>` using ISO 639-1 codes. Examples: `ja-en` (JP source → EN target), `en-ja`, `zh-en`, `ko-en`.
-- **Pack filename** — `game-pack.playto-pack` (fixed) so CI / in-app browser can find it.
-
-### Export: pack, not glossary
-
-In Playto, the Profile tab has two export buttons. Contributions here use the **pack** export:
-
-- **Export pack** → produces `<game-title>.playto-pack`. Contains metadata + language pair + glossary + capture settings + frequency data. **Use this.** Rename the file to `game-pack.playto-pack` before committing.
-- **Export glossary** → produces `glossary.json` with only the term pairs. Useful for personal backup, but it doesn't carry the capture settings that make a pack immediately usable on import. Don't submit this format for community packs.
-
-At import time, the Playto app shows a preview dialog that lets users choose "Import All" (apply capture settings + glossary) or "Glossary only" — so the pack format is strictly a superset.
+- **Pack filename** — whatever the Playto export produces (usually the game slug, e.g. `slay-the-spire.playto-pack`). Exactly one `.playto-pack` file per pair folder.
 
 ### Why pair folders?
 
@@ -52,31 +44,42 @@ The **glossary term pairs themselves are symmetric**, so if a `ja-en` pack alrea
 
 If a pack already exists for your game in one direction (say `ja-en`) and you want to contribute the reverse (`en-ja`):
 
-1. Copy the glossary entries from the existing pack, swapping `source` and `target` fields on each entry.
+1. Open the existing pack's JSON, copy each entry in `profile.context.glossary` with `source` and `target` swapped (glossary pairs are symmetric).
 2. Re-capture your own capture settings for the game build you're running (JP capture region ≠ EN capture region usually).
-3. Credit the original glossary contributor in your new pack's `README.md`.
-4. Open a PR for the new `<source>-<target>/` folder.
+3. Export a fresh pack from Playto on your machine, paste the swapped glossary entries into the new pack's `profile.context.glossary`.
+4. Credit the original glossary contributor in your pack's `profile.context.prompt_hint` field.
+5. Open a PR for the new `<source>-<target>/` folder.
 
-This lowers the barrier for the second pair — you're not starting from scratch.
+Simpler alternative: just import the existing pack into your Playto, play the game in the reverse direction, re-export — Playto will have carried the glossary across.
 
 ## PR checklist
 
 - [ ] Exported pack file opens cleanly when re-imported into a fresh Playto install (test round-trip on your own machine before submitting).
-- [ ] Pair folder matches the pack's actual `fromLang` / `toLang` (no mismatched metadata).
-- [ ] `README.md` inside the pair folder fills in: game name + store + pair + capture mode used + recommended AI engine + contributor handle + pack version.
-- [ ] Game-level `README.md` at `packs/<game>/README.md` exists (create it if you're the first contributor for that game, listing all available pairs as they're added).
+- [ ] Pair folder matches the pack's actual `fromLang` / `toLang` in `game.languages`.
 - [ ] Glossary entries match in-game canon — not personal preferences. Use the localization the game itself ships in your target language if one exists.
 - [ ] No copyrighted source content bundled (screenshots of cutscenes, full script dumps, etc.). Glossary mappings are OK; entire translated scripts are not.
-- [ ] No personal info (Steam username, save-slot names, friends visible in UI) in any screenshot.
+- [ ] No personal info (Steam username, save-slot names, friends visible in UI) — scan the `.playto-pack` JSON for any leaked user-visible text.
+
+You do **not** need to add or update READMEs — CI does that.
+
+## Export: pack, not glossary
+
+In Playto, the Profile tab has two export buttons. Contributions here use the **pack** export:
+
+- **Export pack** → produces `<game-slug>.playto-pack`. Contains metadata + language pair + glossary + capture settings. **Use this.**
+- **Export glossary** → produces `glossary.json` with only the term pairs. Useful for personal backup, but it doesn't carry the capture settings that make a pack immediately usable on import. Don't submit this format for community packs.
+
+At import time the Playto app shows a preview dialog that lets users choose "Import All" (apply capture settings + glossary) or "Glossary only" — the pack format is strictly a superset.
 
 ## What gets reviewed
 
 A Playto maintainer will check:
 
-1. **Pack file loads** — quick round-trip import to confirm format validity.
-2. **Glossary quality** — spot-check 5-10 entries for accuracy. Obvious errors block the merge; stylistic choices usually don't.
-3. **Scope** — single game + single pair per PR. Don't bundle multiple pairs in one PR unless you're the sole contributor and the glossaries are trivially derived (see above).
-4. **Copyright safety** — see the license note in [README.md](README.md#license).
+1. **CI passes** — the validator confirms directory layout, JSON shape, and glossary consistency.
+2. **Pack file loads** — quick round-trip import.
+3. **Glossary quality** — spot-check 5-10 entries for accuracy. Obvious errors block the merge; stylistic choices usually don't.
+4. **Scope** — single game + single pair per PR. Don't bundle multiple pairs in one PR unless you're the sole contributor and the glossaries are trivially derived (see above).
+5. **Copyright safety** — see the license note in [README.md](README.md#license).
 
 Reviews happen weekly. Please don't ping for expedite unless a pack is time-sensitive (e.g. matching a game's actual release day).
 
@@ -84,8 +87,8 @@ Reviews happen weekly. Please don't ping for expedite unless a pack is time-sens
 
 To update an existing pack (add new glossary terms, fix an error):
 
-- Open a PR against the same `packs/<game>/<pair>/` folder.
-- Bump a version line in the pack's README if you want (e.g. `v1`, `v1.1`) — Playto doesn't enforce versioning yet, but it helps reviewers diff.
+- Open a PR replacing the `.playto-pack` file in the same `packs/<game>/<pair>/` folder.
+- The auto-generated README will refresh on merge.
 
 ## Disputed or low-quality packs
 
