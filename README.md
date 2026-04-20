@@ -29,8 +29,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full PR flow. Short version:
 
 ## Current packs
 
-| Game | Source lang | Contributor | Notes |
-|------|------------|-------------|-------|
+Packs are organized as `packs/<game>/<source>-<target>/`. The same game can have multiple packs — one per (source, target) language pair.
+
+| Game | Pair | Contributor | Notes |
+|------|------|-------------|-------|
 | _(seed packs will appear here once the first wave is merged)_ |
 
 ## License
