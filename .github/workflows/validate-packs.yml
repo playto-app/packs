@@ -1,0 +1,29 @@
+name: Validate packs
+
+on:
+  pull_request:
+    paths:
+      - 'packs/**'
+      - 'scripts/validate-packs.py'
+      - '.github/workflows/validate-packs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'packs/**'
+      - 'scripts/validate-packs.py'
+
+jobs:
+  validate:
+    name: Validate pack structure + format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run pack validator
+        run: python scripts/validate-packs.py
