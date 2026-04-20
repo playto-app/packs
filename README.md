@@ -13,8 +13,8 @@ Importing a pack means you start with the settings and vocabulary knowledge of s
 
 ## Install a pack
 
-1. Browse the [`packs/`](packs/) directory below and pick a game.
-2. Download the `.playto-pack` file from that game's folder.
+1. Browse the [`packs/`](packs/) directory below, pick a game, and open the language-pair folder you want (e.g. `en-ja/` for Japanese translations of an English game).
+2. Download the `.playto-pack` file from that folder.
 3. In Playto, open the **Profile** tab → **Import pack** → select the file.
 4. Optionally review imported glossary entries in **Profile → Glossary**.
 
@@ -23,17 +23,15 @@ Importing a pack means you start with the settings and vocabulary knowledge of s
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full PR flow. Short version:
 
 1. Play the game with Playto. Build up a glossary. Tune capture settings.
-2. Export: **Profile → Export pack** → save `<game>.playto-pack`.
-3. Fork this repo, create `packs/<game-slug>/`, drop in your `.playto-pack` + a README describing the game + capture settings used.
+2. Export: **Profile → Export pack** — the file comes out named as the game slug (e.g. `slay-the-spire.playto-pack`).
+3. Drop the exported file into `packs/<game-slug>/<source>-<target>/` (create the folders). No README needed — CI generates them.
 4. Open a PR. Reviews are weekly-async.
 
-## Current packs
+## Repo layout
 
-Packs are organized as `packs/<game>/<source>-<target>/`. The same game can have multiple packs — one per (source, target) language pair.
+Packs are organized as `packs/<game-slug>/<source>-<target>/<game-slug>.playto-pack`. The same game can carry multiple packs — one per (source, target) language pair, each in its own folder.
 
-| Game | Pair | Contributor | Notes |
-|------|------|-------------|-------|
-| _(seed packs will appear here once the first wave is merged)_ |
+Browse [`packs/`](packs/) to see everything currently available. Each game folder has an auto-generated `README.md` that summarizes the available pairs and entry counts.
 
 ## License
 
