@@ -1,0 +1,657 @@
+{
+  "format_version": 1,
+  "exported_at": "2026-04-20T07:51:29.521Z",
+  "game": {
+    "title": "Slay the Spire",
+    "process_name": "SlayTheSpire",
+    "languages": {
+      "from": "en",
+      "to": "ja"
+    }
+  },
+  "summary": {
+    "glossary_count": 66,
+    "contributor": "director-sample (seed)"
+  },
+  "glossary": [
+    {
+      "source": "Weak",
+      "target": "弱体",
+      "category": "game_term"
+    },
+    {
+      "source": "Evoke",
+      "target": "発動",
+      "category": "game_term"
+    },
+    {
+      "source": "Neow",
+      "target": "ネオウ",
+      "category": "character"
+    },
+    {
+      "source": "Silent",
+      "target": "サイレント",
+      "category": "character"
+    },
+    {
+      "source": "Divinity",
+      "target": "神格化",
+      "category": "game_term"
+    },
+    {
+      "source": "Channel",
+      "target": "チャネル",
+      "category": "game_term"
+    },
+    {
+      "source": "Ironclad",
+      "target": "アイアンクラッド",
+      "category": "character"
+    },
+    {
+      "source": "Strike",
+      "target": "ストライク",
+      "category": "item"
+    },
+    {
+      "source": "Focus",
+      "target": "集中",
+      "category": "game_term"
+    },
+    {
+      "source": "Watcher",
+      "target": "ウォッチャー",
+      "category": "character"
+    },
+    {
+      "source": "Elite",
+      "target": "エリート",
+      "category": "location"
+    },
+    {
+      "source": "Exhaust",
+      "target": "廃棄",
+      "category": "game_term"
+    },
+    {
+      "source": "Gold",
+      "target": "ゴールド",
+      "category": "item"
+    },
+    {
+      "source": "Boss",
+      "target": "ボス",
+      "category": "game_term"
+    },
+    {
+      "source": "Orb",
+      "target": "オーブ",
+      "category": "game_term"
+    },
+    {
+      "source": "Stance",
+      "target": "構え",
+      "category": "game_term"
+    },
+    {
+      "source": "Mantra",
+      "target": "マントラ",
+      "category": "game_term"
+    },
+    {
+      "source": "Defend",
+      "target": "防御",
+      "category": "item"
+    },
+    {
+      "source": "HP",
+      "target": "HP",
+      "category": "item"
+    },
+    {
+      "source": "Ethereal",
+      "target": "エセリアル",
+      "category": "game_term"
+    },
+    {
+      "source": "Block",
+      "target": "ブロック",
+      "category": "game_term"
+    },
+    {
+      "source": "Draw Pile",
+      "target": "山札",
+      "category": "game_term"
+    },
+    {
+      "source": "Defect",
+      "target": "ディフェクト",
+      "category": "character"
+    },
+    {
+      "source": "The Heart",
+      "target": "心臓",
+      "category": "character"
+    },
+    {
+      "source": "Energy",
+      "target": "エナジー",
+      "category": "item"
+    },
+    {
+      "source": "Relic",
+      "target": "レリック",
+      "category": "item"
+    },
+    {
+      "source": "Calm",
+      "target": "平静",
+      "category": "game_term"
+    },
+    {
+      "source": "Vulnerable",
+      "target": "脆弱",
+      "category": "game_term"
+    },
+    {
+      "source": "Potion",
+      "target": "ポーション",
+      "category": "item"
+    },
+    {
+      "source": "Dexterity",
+      "target": "敏捷",
+      "category": "game_term"
+    },
+    {
+      "source": "Retain",
+      "target": "保留",
+      "category": "game_term"
+    },
+    {
+      "source": "Innate",
+      "target": "初期手札",
+      "category": "game_term"
+    },
+    {
+      "source": "Rest Site",
+      "target": "休憩所",
+      "category": "location"
+    },
+    {
+      "source": "Deck",
+      "target": "デッキ",
+      "category": "game_term"
+    },
+    {
+      "source": "Merchant",
+      "target": "商人",
+      "category": "location"
+    },
+    {
+      "source": "Act",
+      "target": "アクト",
+      "category": "game_term"
+    },
+    {
+      "source": "Strength",
+      "target": "筋力",
+      "category": "game_term"
+    },
+    {
+      "source": "Ascension",
+      "target": "アセンション",
+      "category": "game_term"
+    },
+    {
+      "source": "Discard Pile",
+      "target": "捨て札",
+      "category": "game_term"
+    },
+    {
+      "source": "Wrath",
+      "target": "怒り",
+      "category": "game_term"
+    },
+    {
+      "source": "Frail",
+      "target": "虚弱",
+      "category": "game_term"
+    },
+    {
+      "source": "Poison",
+      "target": "毒",
+      "category": "game_term"
+    },
+    {
+      "source": "Bleed",
+      "target": "出血",
+      "category": "game_term"
+    },
+    {
+      "source": "Burn",
+      "target": "燃焼",
+      "category": "item"
+    },
+    {
+      "source": "Intangible",
+      "target": "無形",
+      "category": "game_term"
+    },
+    {
+      "source": "Barricade",
+      "target": "バリケード",
+      "category": "game_term"
+    },
+    {
+      "source": "Metallicize",
+      "target": "金属化",
+      "category": "game_term"
+    },
+    {
+      "source": "Artifact",
+      "target": "アーティファクト",
+      "category": "game_term"
+    },
+    {
+      "source": "Upgrade",
+      "target": "強化",
+      "category": "game_term"
+    },
+    {
+      "source": "Attack",
+      "target": "攻撃",
+      "category": "item"
+    },
+    {
+      "source": "Skill",
+      "target": "スキル",
+      "category": "item"
+    },
+    {
+      "source": "Power",
+      "target": "パワー",
+      "category": "item"
+    },
+    {
+      "source": "Curse",
+      "target": "呪い",
+      "category": "item"
+    },
+    {
+      "source": "Status",
+      "target": "状態異常",
+      "category": "item"
+    },
+    {
+      "source": "Scry",
+      "target": "先読み",
+      "category": "game_term"
+    },
+    {
+      "source": "Hexaghost",
+      "target": "ヘクサゴースト",
+      "category": "character"
+    },
+    {
+      "source": "Gremlin Nob",
+      "target": "グレムリンノブ",
+      "category": "character"
+    },
+    {
+      "source": "Slime Boss",
+      "target": "スライムボス",
+      "category": "character"
+    },
+    {
+      "source": "Time Eater",
+      "target": "タイムイーター",
+      "category": "character"
+    },
+    {
+      "source": "Awakened One",
+      "target": "目覚めし者",
+      "category": "character"
+    },
+    {
+      "source": "Donu and Deca",
+      "target": "ドヌーとデカ",
+      "category": "character"
+    },
+    {
+      "source": "Max HP",
+      "target": "最大HP",
+      "category": "game_term"
+    },
+    {
+      "source": "Floor",
+      "target": "フロア",
+      "category": "game_term"
+    },
+    {
+      "source": "Event",
+      "target": "イベント",
+      "category": "location"
+    },
+    {
+      "source": "Treasure Room",
+      "target": "宝箱",
+      "category": "location"
+    },
+    {
+      "source": "Campfire",
+      "target": "休憩所",
+      "category": "location"
+    }
+  ],
+  "profile": {
+    "game": {
+      "title": "Slay the Spire",
+      "display_name": "",
+      "genre": "roguelike_deckbuilder",
+      "process_name": "SlayTheSpire",
+      "window_title": ""
+    },
+    "regions": [
+      {
+        "name": "card_hand",
+        "mode": "ui",
+        "position": {
+          "x": 0.15,
+          "y": 0.75,
+          "width": 0.7,
+          "height": 0.25
+        },
+        "screen": ""
+      },
+      {
+        "name": "event_text",
+        "mode": "dialogue",
+        "position": {
+          "x": 0.2,
+          "y": 0.15,
+          "width": 0.6,
+          "height": 0.5
+        },
+        "screen": "event"
+      },
+      {
+        "name": "reward_screen",
+        "mode": "ui",
+        "position": {
+          "x": 0.25,
+          "y": 0.1,
+          "width": 0.5,
+          "height": 0.7
+        },
+        "screen": "reward"
+      },
+      {
+        "name": "tooltip",
+        "mode": "ui",
+        "position": {
+          "x": 0.6,
+          "y": 0.2,
+          "width": 0.35,
+          "height": 0.4
+        },
+        "screen": ""
+      },
+      {
+        "name": "top_bar",
+        "mode": "ui",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 0.06
+        },
+        "screen": ""
+      }
+    ],
+    "context": {
+      "style": "concise, game-terminology",
+      "world": "Dark fantasy roguelike card game. Player climbs a spire fighting monsters with a deck of cards. Three acts with branching paths.",
+      "prompt_hint": "",
+      "glossary": {
+        "Weak": {
+          "target": "弱体",
+          "category": "",
+          "keep_original": false
+        },
+        "Evoke": {
+          "target": "発動",
+          "category": "",
+          "keep_original": false
+        },
+        "Neow": {
+          "target": "ネオウ",
+          "category": "",
+          "keep_original": false
+        },
+        "Silent": {
+          "target": "サイレント",
+          "category": "",
+          "keep_original": false
+        },
+        "Divinity": {
+          "target": "神格化",
+          "category": "",
+          "keep_original": false
+        },
+        "Channel": {
+          "target": "チャネル",
+          "category": "",
+          "keep_original": false
+        },
+        "Ironclad": {
+          "target": "アイアンクラッド",
+          "category": "",
+          "keep_original": false
+        },
+        "Strike": {
+          "target": "ストライク",
+          "category": "",
+          "keep_original": false
+        },
+        "Focus": {
+          "target": "集中",
+          "category": "",
+          "keep_original": false
+        },
+        "Watcher": {
+          "target": "ウォッチャー",
+          "category": "",
+          "keep_original": false
+        },
+        "Elite": {
+          "target": "エリート",
+          "category": "",
+          "keep_original": false
+        },
+        "Exhaust": {
+          "target": "廃棄",
+          "category": "",
+          "keep_original": false
+        },
+        "Gold": {
+          "target": "ゴールド",
+          "category": "",
+          "keep_original": false
+        },
+        "Boss": {
+          "target": "ボス",
+          "category": "",
+          "keep_original": false
+        },
+        "Orb": {
+          "target": "オーブ",
+          "category": "",
+          "keep_original": false
+        },
+        "Stance": {
+          "target": "構え",
+          "category": "",
+          "keep_original": false
+        },
+        "Mantra": {
+          "target": "マントラ",
+          "category": "",
+          "keep_original": false
+        },
+        "Defend": {
+          "target": "防御",
+          "category": "",
+          "keep_original": false
+        },
+        "HP": {
+          "target": "HP",
+          "category": "",
+          "keep_original": false
+        },
+        "Ethereal": {
+          "target": "エセリアル",
+          "category": "",
+          "keep_original": false
+        },
+        "Block": {
+          "target": "ブロック",
+          "category": "",
+          "keep_original": false
+        },
+        "Draw Pile": {
+          "target": "山札",
+          "category": "",
+          "keep_original": false
+        },
+        "Defect": {
+          "target": "ディフェクト",
+          "category": "",
+          "keep_original": false
+        },
+        "The Heart": {
+          "target": "心臓",
+          "category": "",
+          "keep_original": false
+        },
+        "Energy": {
+          "target": "エナジー",
+          "category": "",
+          "keep_original": false
+        },
+        "Relic": {
+          "target": "レリック",
+          "category": "",
+          "keep_original": false
+        },
+        "Calm": {
+          "target": "平静",
+          "category": "",
+          "keep_original": false
+        },
+        "Vulnerable": {
+          "target": "脆弱",
+          "category": "",
+          "keep_original": false
+        },
+        "Potion": {
+          "target": "ポーション",
+          "category": "",
+          "keep_original": false
+        },
+        "Dexterity": {
+          "target": "敏捷",
+          "category": "",
+          "keep_original": false
+        },
+        "Retain": {
+          "target": "保留",
+          "category": "",
+          "keep_original": false
+        },
+        "Innate": {
+          "target": "初期手札",
+          "category": "",
+          "keep_original": false
+        },
+        "Rest Site": {
+          "target": "休憩所",
+          "category": "",
+          "keep_original": false
+        },
+        "Deck": {
+          "target": "デッキ",
+          "category": "",
+          "keep_original": false
+        },
+        "Merchant": {
+          "target": "商人",
+          "category": "",
+          "keep_original": false
+        },
+        "Act": {
+          "target": "アクト",
+          "category": "",
+          "keep_original": false
+        },
+        "Strength": {
+          "target": "筋力",
+          "category": "",
+          "keep_original": false
+        },
+        "Ascension": {
+          "target": "アセンション",
+          "category": "",
+          "keep_original": false
+        },
+        "Discard Pile": {
+          "target": "捨て札",
+          "category": "",
+          "keep_original": false
+        },
+        "Wrath": {
+          "target": "怒り",
+          "category": "",
+          "keep_original": false
+        }
+      }
+    },
+    "screens": [
+      {
+        "name": "gameplay",
+        "description": "Normal gameplay / combat"
+      },
+      {
+        "name": "event",
+        "description": "Event / story choice screen"
+      },
+      {
+        "name": "reward",
+        "description": "Card/relic reward selection"
+      },
+      {
+        "name": "map",
+        "description": "Map / path selection"
+      },
+      {
+        "name": "shop",
+        "description": "Merchant shop"
+      }
+    ],
+    "capture_settings": {
+      "mode": "cursor",
+      "cursor_w": 400,
+      "cursor_h": 300,
+      "cursor_offset_x": 0,
+      "cursor_offset_y": -250,
+      "from_lang": "en",
+      "to_lang": "ja",
+      "llm_model": "",
+      "translation_mode": ""
+    },
+    "window_title_match": null,
+    "dev_only": false,
+    "protected": false
+  }
+}
