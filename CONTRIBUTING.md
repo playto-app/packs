@@ -30,6 +30,15 @@ packs/
 - **Pair folder** — `<source>-<target>` using ISO 639-1 codes. Examples: `ja-en` (JP source → EN target), `en-ja`, `zh-en`, `ko-en`.
 - **Pack filename** — `game-pack.playto-pack` (fixed) so CI / in-app browser can find it.
 
+### Export: pack, not glossary
+
+In Playto, the Profile tab has two export buttons. Contributions here use the **pack** export:
+
+- **Export pack** → produces `<game-title>.playto-pack`. Contains metadata + language pair + glossary + capture settings + frequency data. **Use this.** Rename the file to `game-pack.playto-pack` before committing.
+- **Export glossary** → produces `glossary.json` with only the term pairs. Useful for personal backup, but it doesn't carry the capture settings that make a pack immediately usable on import. Don't submit this format for community packs.
+
+At import time, the Playto app shows a preview dialog that lets users choose "Import All" (apply capture settings + glossary) or "Glossary only" — so the pack format is strictly a superset.
+
 ### Why pair folders?
 
 Game packs aren't interchangeable between language pairs. Two things differ between, for example, `ja-en` and `en-ja`:
